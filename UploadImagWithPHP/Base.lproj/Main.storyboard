@@ -1,25 +1,82 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UploadImagWithPHP" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07H-47-Zc8">
+                                <rect key="frame" x="9" y="39" width="145" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.86369852505963096" blue="0.22392279122516068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Select Image">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.26390113123667369" green="1" blue="0.19027427341677716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectPhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rha-oy-wiy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="but-UT-b4y">
+                                <rect key="frame" x="206" y="39" width="153" height="30"/>
+                                <color key="backgroundColor" red="0.38376453198471216" green="0.71907112466793777" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="1" green="0.58581993388817133" blue="0.14713031657712949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ayV-TX-wz6"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zaf-tJ-3Jc">
+                                <rect key="frame" x="16" y="136" width="343" height="159"/>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="bod-Yq-UAF">
+                                <rect key="frame" x="173" y="44" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="zaf-tJ-3Jc" secondAttribute="trailing" id="2n5-hC-ol5"/>
+                            <constraint firstItem="bod-Yq-UAF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="157" id="6OF-QU-ZL9"/>
+                            <constraint firstItem="but-UT-b4y" firstAttribute="leading" secondItem="bod-Yq-UAF" secondAttribute="trailing" constant="13" id="7n2-CE-2ms"/>
+                            <constraint firstItem="zaf-tJ-3Jc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="116" id="C0C-bM-gSL"/>
+                            <constraint firstItem="zaf-tJ-3Jc" firstAttribute="top" secondItem="07H-47-Zc8" secondAttribute="bottom" constant="67" id="DTK-tY-dcF"/>
+                            <constraint firstItem="bod-Yq-UAF" firstAttribute="leading" secondItem="07H-47-Zc8" secondAttribute="trailing" constant="19" id="DrL-dG-0a1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zaf-tJ-3Jc" secondAttribute="trailing" id="Hzr-XG-jzs"/>
+                            <constraint firstItem="bod-Yq-UAF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="24" id="Spk-b4-NUU"/>
+                            <constraint firstItem="07H-47-Zc8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-7" id="X0l-xe-pJZ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="zaf-tJ-3Jc" secondAttribute="leading" id="adG-0F-dp6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="but-UT-b4y" secondAttribute="trailing" id="aeV-q5-KVc"/>
+                            <constraint firstItem="07H-47-Zc8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="ev7-Rv-AOH"/>
+                            <constraint firstItem="but-UT-b4y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="l2i-bt-vVw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zaf-tJ-3Jc" secondAttribute="bottom" constant="372" id="vgB-3H-6Yg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myActivityIndicator" destination="bod-Yq-UAF" id="Tdu-QV-y89"/>
+                        <outlet property="myImageView" destination="zaf-tJ-3Jc" id="SG6-Oc-2eQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="769" y="208"/>
         </scene>
     </scenes>
 </document>
